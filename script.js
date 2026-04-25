@@ -87,7 +87,7 @@ function spawnCoin() {
   area.appendChild(coin);
 
   let cy = -28;
-  const speed = 3.5 + Math.min(score * 0.14, 8) + Math.random() * 2;
+  const speed = 1.5 + Math.min(score * 0.06, 5) + Math.random() * 1;
 
   const tick = () => {
     if (!running) { coin.remove(); return; }
