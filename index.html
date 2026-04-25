@@ -4,24 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coin Catcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="game">
-    <h1>Coin Catcher</h1>
+  <div id="cg-root">
+    <h1 class="cg-title">COIN CATCHER</h1>
 
-    <div class="stats">
-      <p>Score: <span id="score">0</span></p>
-      <p>Best: <span id="best">0</span></p>
-      <p>Lives: <span id="lives">3</span></p>
+    <div class="cg-stats">
+      <div class="cg-stat">
+        <span class="cg-stat-label">score</span>
+        <span class="cg-stat-val" id="cg-score">0</span>
+      </div>
+      <div class="cg-stat">
+        <span class="cg-stat-label">best</span>
+        <span class="cg-stat-val" id="cg-best">0</span>
+      </div>
+      <div class="cg-stat">
+        <span class="cg-stat-label">lives</span>
+        <span class="cg-stat-val lives-val" id="cg-lives">❤ ❤ ❤</span>
+      </div>
+      <div class="cg-stat">
+        <span class="cg-stat-label">combo</span>
+        <span class="cg-stat-val combo-val" id="cg-combo-stat">x1</span>
+      </div>
     </div>
 
-    <div id="gameArea">
-      <div id="player"></div>
+    <div id="cg-area">
+      <div class="cg-lane" style="left:25%"></div>
+      <div class="cg-lane" style="left:50%"></div>
+      <div class="cg-lane" style="left:75%"></div>
+      <div id="cg-player"></div>
+      <div id="cg-overlay">
+        <h2>COIN CATCHER</h2>
+        <p>catch coins · dodge bombs · build combos</p>
+        <button id="cg-btn">START GAME</button>
+      </div>
+      <div class="cg-combo-popup" id="cg-combo-popup"></div>
     </div>
 
-    <button id="startBtn">Start Game</button>
-    <p class="hint">Use ← and → arrow keys</p>
+    <div class="cg-speed-bar">
+      <div class="cg-speed-fill" id="cg-speed-bar"></div>
+    </div>
+
+    <div class="cg-legend">
+      <div class="cg-legend-item">
+        <div class="cg-dot cg-dot-gold"></div>GOLD +2
+      </div>
+      <div class="cg-legend-item">
+        <div class="cg-dot cg-dot-silver"></div>SILVER +1
+      </div>
+      <div class="cg-legend-item">
+        <div class="cg-dot cg-dot-bomb"></div>BOMB -1 LIFE
+      </div>
+    </div>
+
+    <p class="cg-hint">← → ARROW KEYS &nbsp;|&nbsp; MOUSE or TOUCH to move</p>
   </div>
 
   <script src="script.js"></script>
